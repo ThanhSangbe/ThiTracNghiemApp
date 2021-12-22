@@ -1,0 +1,71 @@
+{
+  "format": 1,
+  "restore": {
+    "H:\\.shortcut-targets-by-id\\1DEZZ0bprb9YiZeSDst7EpIU7uhKQsPSs\\FileTaiLieu\\Bai_Tap_Lon\\TracNghiemApp\\TracNghiemApp\\TracNghiemApp.csproj": {}
+  },
+  "projects": {
+    "H:\\.shortcut-targets-by-id\\1DEZZ0bprb9YiZeSDst7EpIU7uhKQsPSs\\FileTaiLieu\\Bai_Tap_Lon\\TracNghiemApp\\TracNghiemApp\\TracNghiemApp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "H:\\.shortcut-targets-by-id\\1DEZZ0bprb9YiZeSDst7EpIU7uhKQsPSs\\FileTaiLieu\\Bai_Tap_Lon\\TracNghiemApp\\TracNghiemApp\\TracNghiemApp.csproj",
+        "projectName": "TracNghiemApp",
+        "projectPath": "H:\\.shortcut-targets-by-id\\1DEZZ0bprb9YiZeSDst7EpIU7uhKQsPSs\\FileTaiLieu\\Bai_Tap_Lon\\TracNghiemApp\\TracNghiemApp\\TracNghiemApp.csproj",
+        "packagesPath": "C:\\Users\\mrsan\\.nuget\\packages\\",
+        "outputPath": "H:\\.shortcut-targets-by-id\\1DEZZ0bprb9YiZeSDst7EpIU7uhKQsPSs\\FileTaiLieu\\Bai_Tap_Lon\\TracNghiemApp\\TracNghiemApp\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\mrsan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0-windows7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0-windows7.0": {
+            "targetAlias": "net5.0-windows",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0-windows7.0": {
+          "targetAlias": "net5.0-windows",
+          "dependencies": {
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[8.0.27, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
