@@ -66,17 +66,52 @@ namespace TracNghiemApp
                     {
                         int index = reader.GetOrdinal("content");
                         string content = reader.GetValue(index).ToString();
-                        string a = reader.GetValue(reader.GetOrdinal("a")).ToString();
-                        string b = reader.GetValue(reader.GetOrdinal("b")).ToString();
-                        string c = reader.GetValue(reader.GetOrdinal("c")).ToString();
-                        string d = reader.GetValue(reader.GetOrdinal("d")).ToString();
+                        String[] choiceitem = new string[4];
+                        choiceitem[0] = reader.GetValue(reader.GetOrdinal("a")).ToString();
+                        choiceitem[1] = reader.GetValue(reader.GetOrdinal("b")).ToString();
+                        choiceitem[2] = reader.GetValue(reader.GetOrdinal("c")).ToString();
+                        choiceitem[3] = reader.GetValue(reader.GetOrdinal("d")).ToString();
                         string result = reader.GetValue(reader.GetOrdinal("result")).ToString();
                         int cate_id = Convert.ToInt32(reader.GetValue(reader.GetOrdinal("category_id")).ToString());
                         CategoryService categoryService = new CategoryService();
 
                         Category category = categoryService.GetCategoryById(cate_id);
+                        //Tron Dap An
+                        HashSet<int> hasSet = new HashSet<int>();
+                        while (hasSet.Count() < 4)
+                        {
+                            Random rand = new Random();
+                            int x = rand.Next(0, 4);
+                            hasSet.Add(x);
+                        }
+                        switch(result)
+                        {
+                            case "A": result = choiceitem[0]; break;
+                            case "B": result = choiceitem[1]; break;
+                            case "C": result = choiceitem[2]; break;
+                            case "D": result = choiceitem[3]; break;
+                        }
+                        List<String> choices = new List<String>();
+                        foreach(int i in hasSet)
+                        {
+                            choices.Add(choiceitem[i]);
+                        }
 
-                        questions.Add(new Question(content, a, b, c, d, result, category));
+                        for(int i = 0; i<4; i++)
+                        {
+                            if(choices[i] == result)
+                            {
+                                switch (i)
+                                {
+                                    case 0: result = "A"; break;
+                                    case 1: result = "B"; break;
+                                    case 2: result = "C"; break;
+                                    case 3: result = "D"; break;
+                                }
+                                break;
+                            }
+                        }
+                        questions.Add(new Question(content, result, category,choices));
                     }
                 }
             }

@@ -21,6 +21,8 @@ namespace TracNghiemApp
             InitializeComponent();
             CategoryService cate = new CategoryService();
             getCategory(listCategory);
+            initColunmListViewTop10();
+            initTop10();
         }
 
         private void btnStart_Click(object sender, EventArgs e)
@@ -55,16 +57,16 @@ namespace TracNghiemApp
             {
                 ListViewItem listViewItem = new ListViewItem(item.fullname);
                 listViewItem.SubItems.Add(item.timefinish);
-                listViewItem.SubItems.Add(item.score.ToString());
+                listViewItem.SubItems.Add(String.Format(" {0:0.00}", item.score));
 
                 listTop.Items.Add(listViewItem);
             }
         }
         public void initColunmListViewTop10()
         {
-            listTop.Columns.Add("Họ và tên", 194, HorizontalAlignment.Left);
-            listTop.Columns.Add("Thời gian", 70, HorizontalAlignment.Left);
-            listTop.Columns.Add("Điểm số", 70, HorizontalAlignment.Left);
+            listTop.Columns.Add("Họ và tên", 200, HorizontalAlignment.Left);
+            listTop.Columns.Add("Thời gian", 150, HorizontalAlignment.Left);
+            listTop.Columns.Add("Điểm số", 100, HorizontalAlignment.Left);
         }
         public void getCategory(ComboBox cbx)
         {

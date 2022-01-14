@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "H:\\.shortcut-targets-by-id\\1DEZZ0bprb9YiZeSDst7EpIU7uhKQsPSs\\FileTaiLieu\\Bai_Tap_Lon\\TracNghiemApp\\TracNghiemApp\\TracNghiemApp.csproj": {}
+    "C:\\Users\\DELL\\source\\repos\\TracNghiemApp\\TracNghiemApp.csproj": {}
   },
   "projects": {
-    "H:\\.shortcut-targets-by-id\\1DEZZ0bprb9YiZeSDst7EpIU7uhKQsPSs\\FileTaiLieu\\Bai_Tap_Lon\\TracNghiemApp\\TracNghiemApp\\TracNghiemApp.csproj": {
+    "C:\\Users\\DELL\\source\\repos\\TracNghiemApp\\TracNghiemApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\.shortcut-targets-by-id\\1DEZZ0bprb9YiZeSDst7EpIU7uhKQsPSs\\FileTaiLieu\\Bai_Tap_Lon\\TracNghiemApp\\TracNghiemApp\\TracNghiemApp.csproj",
+        "projectUniqueName": "C:\\Users\\DELL\\source\\repos\\TracNghiemApp\\TracNghiemApp.csproj",
         "projectName": "TracNghiemApp",
-        "projectPath": "H:\\.shortcut-targets-by-id\\1DEZZ0bprb9YiZeSDst7EpIU7uhKQsPSs\\FileTaiLieu\\Bai_Tap_Lon\\TracNghiemApp\\TracNghiemApp\\TracNghiemApp.csproj",
-        "packagesPath": "C:\\Users\\mrsan\\.nuget\\packages\\",
-        "outputPath": "H:\\.shortcut-targets-by-id\\1DEZZ0bprb9YiZeSDst7EpIU7uhKQsPSs\\FileTaiLieu\\Bai_Tap_Lon\\TracNghiemApp\\TracNghiemApp\\obj\\",
+        "projectPath": "C:\\Users\\DELL\\source\\repos\\TracNghiemApp\\TracNghiemApp.csproj",
+        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\DELL\\source\\repos\\TracNghiemApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\mrsan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,6 +40,14 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "dependencies": {
+            "EPPlus": {
+              "target": "Package",
+              "version": "[5.8.4, )"
+            },
+            "ExcelDataReader.DataSet": {
+              "target": "Package",
+              "version": "[3.6.0, )"
+            },
             "MySql.Data": {
               "target": "Package",
               "version": "[8.0.27, )"
@@ -63,7 +71,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
         }
       }
     }

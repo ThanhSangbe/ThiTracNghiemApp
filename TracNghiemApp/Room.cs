@@ -15,26 +15,23 @@ namespace TracNghiemApp
         List<Question> listQuestion;
         List<SaveChoice> listSaveChoice;
         int QuestionCurrent=0;
-        int sizeQuestion = 3;
+        int sizeQuestion = 30;
         int Category_Id;
         public Room()
         {
             InitializeComponent();
-            initQuestion();
-            WriteOneQuestion(listQuestion, QuestionCurrent);
-            txtCategory.Text += listQuestion[0].category_id.title;
-            btnPrevious.Enabled = false;
+           
         }
         public Room(String name, int cate_id):this()
         {
-            txtName.Text = name;
+            txtName.Text += ": " + name;
             this.Category_Id = cate_id;
         }
-        int minute = 30;
+        int minute = 45;
         int second = 00;
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (minute == 30 && second == 0)
+            if (minute == 40 && second == 0)
             {
                 string time1 = String.Format("{0}:{1}", minute, second);
                 txtTime.Text = time1;
@@ -192,7 +189,7 @@ namespace TracNghiemApp
 
             var result = SumScore();
             int results=0;
-            int score=0;
+            double score=0;
             foreach(var item in result)
             {
                 results = item.Key;
@@ -201,7 +198,8 @@ namespace TracNghiemApp
             }
             Result re = new Result(results, score);
             UserService userService = new UserService();
-            User user = userService.getUserByName(txtName.Text);
+            String name = txtName.Text.Substring(txtName.Text.LastIndexOf(':') + 1).Trim();
+            User user = userService.getUserByName(name);
             string timeCurrent = getTime(txtTime.Text);
             Histories histories = new Histories(user.id,user.fullname,timeCurrent,score);
             HistoryDAO historyDAO = new HistoryDAO();
@@ -209,17 +207,17 @@ namespace TracNghiemApp
             re.ShowDialog();
             this.Hide();
         }
-        public Dictionary<int,int> SumScore()
+        public Dictionary<int,double> SumScore()
         {
-            var x = new Dictionary<int, int>();
+            var x = new Dictionary<int, double>();
             int sum = 0;
-            int result = 0;
+            double result = 0;
             foreach (SaveChoice temp in listSaveChoice)
             {
                 if (temp.Result == temp.YourChoice)
                 {
-                    sum += 4;
-                    result++;
+                    sum ++;
+                    result+= 0.33;
                 }
             }
             x.Add(sum, result);
@@ -228,18 +226,61 @@ namespace TracNghiemApp
         public string getTime(String time)
         {
             
-            int minute = 30;
-            int second = 00;
+            int minute = 44;
+            int second = 60;
             string[] timearr = time.Split(":");
-            int minuteCurrent = Convert.ToInt32(timearr[0]);
+            int minuteCurrent = Convert.ToInt32(timearr[0]); // 39:00
             int seccondCurrent = Convert.ToInt32(timearr[1]);
-            minute = 30 - minuteCurrent;
+            minute = 44 - minuteCurrent;
             //10:00
             if (seccondCurrent != 0) //10:45
             {
                 second = 60 - seccondCurrent;
             }
+            if(minute == 0)
+            {
+                return String.Format("{0} Giây",second);
+            }
+            else if(second == 0)
+            {
+                return String.Format("{0} Phút", minute);
+            }
+            else 
             return String.Format("{0} Phút {1} Giây", minute, second);
+
+        }
+
+        private void Room_Load(object sender, EventArgs e)
+        {
+            initQuestion();
+            WriteOneQuestion(listQuestion, QuestionCurrent);
+            txtCategory.Text += listQuestion[0].category_id.title;
+            btnPrevious.Enabled = false;
+        }
+
+        private void button26_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            saveChoice(QuestionCurrent);
+            QuestionCurrent = Convert.ToInt32(btn.Text) - 1;
+            WriteOneQuestion(listQuestion, QuestionCurrent);
+            
+            if (QuestionCurrent == sizeQuestion - 1)
+            {
+                this.btnPrevious.Enabled = true;
+                this.btnNext.Enabled = false;
+            }
+            else if(QuestionCurrent == 0)
+            {
+                this.btnPrevious.Enabled = false;
+                this.btnNext.Enabled = true;
+
+            }
+            else
+            {
+                this.btnNext.Enabled = true;
+                this.btnPrevious.Enabled = true;
+            }
 
         }
     }

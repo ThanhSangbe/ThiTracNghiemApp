@@ -7,6 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Office.Interop.Excel;
+using OfficeOpenXml;
+using OfficeOpenXml.Style;
+using System.IO;
+using Excel = Microsoft.Office.Interop.Excel;
+
 
 namespace TracNghiemApp
 {
@@ -52,6 +58,9 @@ namespace TracNghiemApp
                 {
                     refeshQuestion();
                 }
+                txtContent.Text = a.Text = b.Text = c.Text = d.Text = "";
+                cbxCategories.SelectedIndex = -1;
+                cbxResult.SelectedIndex = -1;
             }
         }
 
@@ -102,6 +111,8 @@ namespace TracNghiemApp
                 MessageBox.Show("Cập nhật thành công", "Chúc mừng", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 refeshQuestion();
             }
+            txtContent.Text = a.Text = b.Text = c.Text = d.Text = "";
+            cbxCategories.SelectedIndex = cbxResult.SelectedIndex = -1;
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
@@ -212,6 +223,59 @@ namespace TracNghiemApp
             txtContent.Text = a.Text = b.Text = c.Text = d.Text = "";
             cbxCategories.SelectedIndex = -1;
             cbxResult.SelectedIndex = -1;
+        }
+
+        private void btnThemBangFile_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dlg = new OpenFileDialog();
+            dlg.Filter = "Excel file (*.xlsx)|*.xlsx";
+            string src = "";
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                src += dlg.FileName;
+            }
+            Excel.Application xlApp = new Excel.Application();
+            Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(@src);
+            Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
+            Excel.Range xlRange = xlWorksheet.UsedRange;
+            int rowCount = xlRange.Rows.Count;
+            int colCount = xlRange.Columns.Count;
+            //Mo file 
+;
+            List<Question> questions = new List<Question>();
+            // Lay sheet dau tien de thao tac
+
+            for(int i = 2; i<= rowCount; i++)
+            {
+               
+
+
+                    try
+                    {
+                        int j = 1;
+                        Question q = new Question();
+                        q.Content = xlRange.Cells[i, j++].Value2.ToString();
+                        q.A = xlRange.Cells[i, j++].Value2.ToString();
+                        q.B = xlRange.Cells[i, j++].Value2.ToString();
+                        q.C = xlRange.Cells[i, j++].Value2.ToString();
+                        q.D = xlRange.Cells[i, j++].Value2.ToString();
+                        q.Result = xlRange.Cells[i, j++].Value2.ToString();
+                        Category c = new Category();
+                        c.id = Convert.ToInt32(xlRange.Cells[i, j].Value2.ToString());
+
+                        q.category_id = c;
+                        questions.Add(q);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Đọc file không được");
+                    }
+                
+                
+            }
+            QuestionDAO questionDAO = new QuestionDAO();
+            questionDAO.addQuestion(null,questions);
+            
         }
     }
 }

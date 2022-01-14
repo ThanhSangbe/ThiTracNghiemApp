@@ -49,7 +49,7 @@ namespace TracNghiemApp
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(971, 53);
+            this.label1.Size = new System.Drawing.Size(1110, 71);
             this.label1.TabIndex = 0;
             this.label1.Text = "Ứng dụng thi trắc nghiệm tiếng anh";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -58,47 +58,50 @@ namespace TracNghiemApp
             // 
             this.name.AutoSize = true;
             this.name.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.name.Location = new System.Drawing.Point(80, 70);
+            this.name.Location = new System.Drawing.Point(91, 93);
             this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(83, 21);
+            this.name.Size = new System.Drawing.Size(105, 28);
             this.name.TabIndex = 1;
             this.name.Text = "Họ và tên: ";
             // 
             // txtFullName
             // 
             this.txtFullName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtFullName.Location = new System.Drawing.Point(80, 94);
+            this.txtFullName.Location = new System.Drawing.Point(91, 125);
+            this.txtFullName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtFullName.Name = "txtFullName";
             this.txtFullName.PlaceholderText = "Nhập họ tên của bạn";
-            this.txtFullName.Size = new System.Drawing.Size(338, 29);
+            this.txtFullName.Size = new System.Drawing.Size(386, 34);
             this.txtFullName.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(383, 10);
+            this.label3.Location = new System.Drawing.Point(438, 13);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 21);
+            this.label3.Size = new System.Drawing.Size(71, 28);
             this.label3.TabIndex = 1;
             this.label3.Text = "Top 10";
             // 
             // listTop
             // 
             this.listTop.HideSelection = false;
-            this.listTop.Location = new System.Drawing.Point(3, 43);
+            this.listTop.Location = new System.Drawing.Point(3, 57);
+            this.listTop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listTop.Name = "listTop";
-            this.listTop.Size = new System.Drawing.Size(436, 334);
+            this.listTop.Size = new System.Drawing.Size(498, 444);
             this.listTop.TabIndex = 4;
             this.listTop.UseCompatibleStateImageBehavior = false;
+            this.listTop.View = System.Windows.Forms.View.Details;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(80, 155);
+            this.label4.Location = new System.Drawing.Point(91, 207);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(132, 21);
+            this.label4.Size = new System.Drawing.Size(167, 28);
             this.label4.TabIndex = 1;
             this.label4.Text = "Chọn dạng đề bài";
             // 
@@ -107,17 +110,19 @@ namespace TracNghiemApp
             this.listCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.listCategory.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.listCategory.FormattingEnabled = true;
-            this.listCategory.Location = new System.Drawing.Point(80, 194);
+            this.listCategory.Location = new System.Drawing.Point(91, 259);
+            this.listCategory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listCategory.Name = "listCategory";
-            this.listCategory.Size = new System.Drawing.Size(338, 29);
+            this.listCategory.Size = new System.Drawing.Size(386, 36);
             this.listCategory.TabIndex = 2;
             // 
             // btnStart
             // 
             this.btnStart.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnStart.Location = new System.Drawing.Point(139, 261);
+            this.btnStart.Location = new System.Drawing.Point(159, 348);
+            this.btnStart.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(188, 50);
+            this.btnStart.Size = new System.Drawing.Size(215, 67);
             this.btnStart.TabIndex = 3;
             this.btnStart.Text = "Bắt đầu";
             this.btnStart.UseVisualStyleBackColor = true;
@@ -131,29 +136,32 @@ namespace TracNghiemApp
             this.panel1.Controls.Add(this.listCategory);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.panel1.Location = new System.Drawing.Point(12, 56);
+            this.panel1.Location = new System.Drawing.Point(14, 75);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(499, 380);
+            this.panel1.Size = new System.Drawing.Size(570, 507);
             this.panel1.TabIndex = 6;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.listTop);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(517, 56);
+            this.panel2.Location = new System.Drawing.Point(591, 75);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(442, 380);
+            this.panel2.Size = new System.Drawing.Size(505, 507);
             this.panel2.TabIndex = 7;
             // 
             // Home
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(971, 454);
+            this.ClientSize = new System.Drawing.Size(1110, 605);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Home";

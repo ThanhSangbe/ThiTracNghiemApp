@@ -48,7 +48,7 @@ namespace TracNghiemApp
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(946, 52);
+            this.label1.Size = new System.Drawing.Size(1081, 69);
             this.label1.TabIndex = 0;
             this.label1.Text = "Kết quả";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -57,17 +57,19 @@ namespace TracNghiemApp
             // 
             this.panel2.Controls.Add(this.listTop);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(504, 55);
+            this.panel2.Location = new System.Drawing.Point(576, 73);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(442, 380);
+            this.panel2.Size = new System.Drawing.Size(505, 507);
             this.panel2.TabIndex = 8;
             // 
             // listTop
             // 
             this.listTop.HideSelection = false;
-            this.listTop.Location = new System.Drawing.Point(3, 43);
+            this.listTop.Location = new System.Drawing.Point(3, 57);
+            this.listTop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listTop.Name = "listTop";
-            this.listTop.Size = new System.Drawing.Size(436, 334);
+            this.listTop.Size = new System.Drawing.Size(498, 444);
             this.listTop.TabIndex = 2;
             this.listTop.UseCompatibleStateImageBehavior = false;
             this.listTop.View = System.Windows.Forms.View.Details;
@@ -76,9 +78,9 @@ namespace TracNghiemApp
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(383, 10);
+            this.label3.Location = new System.Drawing.Point(438, 13);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 21);
+            this.label3.Size = new System.Drawing.Size(71, 28);
             this.label3.TabIndex = 1;
             this.label3.Text = "Top 10";
             // 
@@ -88,18 +90,19 @@ namespace TracNghiemApp
             this.panel1.Controls.Add(this.txtResult);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.button26);
-            this.panel1.Location = new System.Drawing.Point(12, 55);
+            this.panel1.Location = new System.Drawing.Point(14, 73);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(486, 380);
+            this.panel1.Size = new System.Drawing.Size(555, 507);
             this.panel1.TabIndex = 9;
             // 
             // txtScore
             // 
             this.txtScore.AutoSize = true;
             this.txtScore.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtScore.Location = new System.Drawing.Point(127, 171);
+            this.txtScore.Location = new System.Drawing.Point(145, 228);
             this.txtScore.Name = "txtScore";
-            this.txtScore.Size = new System.Drawing.Size(99, 30);
+            this.txtScore.Size = new System.Drawing.Size(127, 37);
             this.txtScore.TabIndex = 7;
             this.txtScore.Text = "Số điểm: ";
             // 
@@ -107,9 +110,9 @@ namespace TracNghiemApp
             // 
             this.txtResult.AutoSize = true;
             this.txtResult.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtResult.Location = new System.Drawing.Point(127, 129);
+            this.txtResult.Location = new System.Drawing.Point(145, 172);
             this.txtResult.Name = "txtResult";
-            this.txtResult.Size = new System.Drawing.Size(86, 30);
+            this.txtResult.Size = new System.Drawing.Size(108, 37);
             this.txtResult.TabIndex = 6;
             this.txtResult.Text = "Số câu: ";
             // 
@@ -120,7 +123,7 @@ namespace TracNghiemApp
             this.label2.ForeColor = System.Drawing.Color.Red;
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(486, 84);
+            this.label2.Size = new System.Drawing.Size(555, 112);
             this.label2.TabIndex = 5;
             this.label2.Text = "Chúc mừng bạn đã hoàn thành bài thi";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -128,22 +131,25 @@ namespace TracNghiemApp
             // button26
             // 
             this.button26.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button26.Location = new System.Drawing.Point(160, 252);
+            this.button26.Location = new System.Drawing.Point(183, 336);
+            this.button26.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button26.Name = "button26";
-            this.button26.Size = new System.Drawing.Size(167, 43);
+            this.button26.Size = new System.Drawing.Size(191, 57);
             this.button26.TabIndex = 1;
             this.button26.Text = "Đồng ý";
             this.button26.UseVisualStyleBackColor = true;
+            this.button26.Click += new System.EventHandler(this.button26_Click);
             // 
             // Result
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(946, 457);
+            this.ClientSize = new System.Drawing.Size(1081, 609);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Result";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Result";

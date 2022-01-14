@@ -15,9 +15,9 @@ namespace TracNghiemApp
             MySqlConnection conn = DBMySQLUtils.getDBConnection();
             conn.Open();
             List<Question> questions = new List<Question>();
-            string sql = "SELECT * FROM question ;";
+            string sql = "SELECT * FROM users ";
 
-                sql += " WHERE content like '%" + kw + "%';";
+                sql += " WHERE fullname ='" + kw + "';";
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = conn;
             cmd.CommandText = sql;

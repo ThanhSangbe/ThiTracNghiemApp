@@ -26,6 +26,16 @@ namespace TracNghiemApp
             this.Result = result;
             this.category_id = cate_Id;
         }
+        public Question(String content, string result, Category cate_id, List<String> choices)
+        {
+            this.Content = content;
+            this.Result = result;
+            this.category_id = cate_id;
+            this.A = choices[0];
+            this.B = choices[1];
+            this.C = choices[2];
+            this.D = choices[3];
+        }
 
     }
 }

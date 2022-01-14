@@ -11,9 +11,9 @@ namespace TracNghiemApp
         public int id { get; set; }
         public string fullname { get; set; }
         public string timefinish { get; set; }
-        public int score { get; set; }
+        public double score { get; set; }
         public Histories() { }
-        public Histories(int id,string fullname, string time, int score)
+        public Histories(int id,string fullname, string time, double score)
         {
             this.id = id;
             this.fullname = fullname;

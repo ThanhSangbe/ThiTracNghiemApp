@@ -11,17 +11,47 @@ namespace TracNghiemApp
 {
     class QuestionDAO
     {
-        public bool addQuestion(Question q)
+        public bool addQuestion(Question q = null, List<Question> questions = null)
         {
             MySqlConnection conn = DBMySQLUtils.getDBConnection();
             try
             {
                 QuestionService qs = new QuestionService();
-                
-                conn.Open();
-                string sql = String.Format("insert into question(content,a,b,c,d,result,category_id) values " +
-                    "('{0}','{1}','{2}','{3}','{4}','{5}','{6}')", q.Content, q.A, q.B, q.C, q.D, q.Result, q.category_id.id);
+                string sql = "";
+               conn.Open();
+                if (questions != null)
+                {
+                    sql += "insert into question(content,a,b,c,d,result,category_id) values ";
+                    for(int i = 0; i<questions.Count; i++)
+                    {
+                        if (i == questions.Count - 1)
+                        {
+                            sql += String.Format("('{0}','{1}','{2}','{3}','{4}','{5}',{6});"
+                            , questions[i].Content, questions[i].A, questions[i].B, questions[i].C, questions[i].D, questions[i].Result, questions[i].category_id.id);
+                            break;
+                        }
+                        
+                        
+                            sql += String.Format("('{0}','{1}','{2}','{3}','{4}','{5}',{6}),"
+                                , questions[i].Content, questions[i].A, questions[i].B, questions[i].C, questions[i].D, questions[i].Result, questions[i].category_id.id);
+                        
+                    }
+                }
+                else
+                {
+                    sql += "insert into question(content,a,b,c,d,result,category_id) value ";
 
+                    if (q.Content.Contains("\'") || q.A.Contains("\'") || q.B.Contains("\'") || q.C.Contains("\'") || q.D.Contains("\'"))
+                    {
+                        sql += String.Format(
+                        "(\"{0}\",\"{1}\",\"{2}\",\"{3}\",\"{4}\",\"{5}\",\"{6}\")", q.Content, q.A, q.B, q.C, q.D, q.Result, q.category_id.id);
+                    }
+                    else
+                    {
+                        sql += String.Format(
+                        "('{0}','{1}','{2}','{3}','{4}','{5}','{6}')", q.Content, q.A, q.B, q.C, q.D, q.Result, q.category_id.id);
+                    }
+                }
 
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 MySqlDataReader runquery;

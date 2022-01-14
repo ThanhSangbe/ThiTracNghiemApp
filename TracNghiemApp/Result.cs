@@ -18,10 +18,10 @@ namespace TracNghiemApp
             initColunmListViewTop10();
             initTop10();
         }
-        public Result(int result, int score):this()
+        public Result(int result, double score):this()
         {
-            txtResult.Text += String.Format(" {0}/25 Câu", result);
-            txtResult.Text += String.Format(" {0} Điểm", score);
+            txtResult.Text += String.Format(" {0}/30 Câu", result);
+            txtScore.Text += String.Format(" {0:0.0} Điểm", score);
         }
         public void initTop10()
         {
@@ -31,18 +31,23 @@ namespace TracNghiemApp
             {
                 ListViewItem listViewItem = new ListViewItem(item.fullname);
                 listViewItem.SubItems.Add(item.timefinish);
-                listViewItem.SubItems.Add(item.score.ToString());
+                listViewItem.SubItems.Add(String.Format(" {0:0.00}", item.score));
 
                 listTop.Items.Add(listViewItem);
             }
         }
         public void initColunmListViewTop10()
         {
-            listTop.Columns.Add("Họ và tên", 194, HorizontalAlignment.Left);
-            listTop.Columns.Add("Thời gian", 70, HorizontalAlignment.Left);
-            listTop.Columns.Add("Điểm số", 70, HorizontalAlignment.Left);
+            listTop.Columns.Add("Họ và tên", 200, HorizontalAlignment.Left);
+            listTop.Columns.Add("Thời gian", 150, HorizontalAlignment.Left);
+            listTop.Columns.Add("Điểm số", 100, HorizontalAlignment.Left);
         }
 
-
+        private void button26_Click(object sender, EventArgs e)
+        {
+            Form1 f = new Form1();
+            f.ShowDialog();
+            this.Close();
+        }
     }
 }
